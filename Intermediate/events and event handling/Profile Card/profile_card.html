@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body,
+      .main, .form_area , .cards{
+        height: 100%;
+        width: 100%;
+        background-color: #212121;
+        margin: 10px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        /* display: inline-block; */
+        display: inline-flex;
+        gap: 2px;
+        margin-bottom: 40px;
+        width: 100;
+      }
+      .cards{
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      
+      .card {
+        color: white;
+        max-width: 300px;
+        border: 1px solid #4a4848;
+        border-radius: 7px;
+        padding: 20px;
+        display: inline-block;
+      }
+      .profile-pic {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: blue;
+      }
+      .profile-pic img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+      .card .name h3 {
+        margin: 10px auto;
+        font-size: 22px;
+      }
+      .card .occupation h5 {
+        margin: 10px auto;
+        font-size: 18px;
+      }
+      .summry{
+        width: 100%;
+      }
+      p{
+            text-overflow: ellipsis;
+    overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+     <div class="form_area">
+       <form>
+         <input type="text" placeholder="Profile-pic" />
+        <input type="text" placeholder="Name" />
+        <input type="text" placeholder="occupation" />
+        <input type="text" placeholder="Bio" />
+        <input type="submit" value="submit" />
+      </form>
+     </div>
+      <!-- <div class="card">
+        <div class="profile-pic">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKCm2TrgV_qFZVP8MWuWVNYQ03fj-YQBdT1ur4_5ldZg&s=10"
+            alt=""
+          />
+        </div>
+
+        <div class="name">
+          <h3>Ketan Prajapati</h3>
+        </div>
+        <div class="occupation">
+          <h5>Software engineer</h5>
+        </div>
+        <div class="summury">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quia
+          laborum fuga temporibus eos nemo ab eligendi aliquam sunt minima.
+          Aliquam praesentium excepturi perferendis, voluptates commodi dolorum
+          impedit eum magni.
+        </div>
+      </div> -->
+
+      <div class="cards"></div>
+    </div>
+
+    <script src="profile_card.js"></script>
+  </body>
+</html>

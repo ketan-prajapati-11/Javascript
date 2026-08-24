@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #212121;
+        color: white;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        border: solid 1px rgb(150, 131, 131);
+        border-radius: 10px;
+        gap: 10px;
+
+    }
+    input{
+        height: 30px;
+        
+        padding-left: 10px;
+        border-radius: 5px;
+    }
+    .submit{
+     
+        border: none;
+        padding: 0px;
+        background-color: green;
+        color: white;
+        font-weight: bold;
+        
+    }
+    .submit:hover{
+        cursor: pointer;
+        background-color: rgb(53, 84, 53);
+    }
+    h2{
+        text-align: center;
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+    /* .hide{
+        display: none;
+    } */
+    .emailError{
+         display: none;
+    }
+    .passwordError{
+        display: none;
+    }
+    
+</style>
+<body>
+    <div class="main">
+        
+        <form autocomplete="off" novalidate>
+                <h2>Login </h2>
+                <input type="email" class="email" placeholder="Enter Email">
+                <small class="emailError hide">Entered Email is invalid</small>
+            
+
+            
+                <input type="password" class="password" placeholder="Enter Password">
+                <small class="passwordError hide">Entered Passwaord is  a wrong</small>
+
+                <input type="submit" class="submit" value="Submit">
+                <div class="valid"></div>
+
+<script src="form.js" defer></script>
+        </form>
+    </div>
+
+</body>
+</html>

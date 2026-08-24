@@ -1,0 +1,72 @@
+Exactly! 👍 Your understanding is basically correct. Just make one small correction.
+
+### `append()`
+
+`append()` can accept **Nodes/elements AND strings**, and it can accept **multiple values**.
+
+```js
+parent.append(node);
+parent.append("Hello");
+parent.append(node, "Hello", anotherNode);
+```
+
+For example:
+
+```js id="q5h3p1"
+let h1 = document.createElement("h1");
+h1.innerText = "Hello";
+
+document.body.append(h1, "Welcome", "Ketan");
+```
+
+All three are added.
+
+---
+
+### `appendChild()`
+
+`appendChild()` accepts **only one Node** at a time.
+
+```js id="6q7f3n"
+document.body.appendChild(h1);
+```
+
+You cannot do:
+
+```js id="zyb6i1"
+document.body.appendChild(h1, p);
+```
+
+Only the first argument is used.
+
+And you **cannot directly pass a string**:
+
+```js id="j6f9u8"
+document.body.appendChild("Hello");
+```
+
+❌ Error, because `"Hello"` is a string, not a Node.
+
+---
+
+### 🧠 Remember it like this
+
+```text id="0olh14"
+append()
+   ↓
+Node ✅
+String ✅
+Multiple values ✅
+
+appendChild()
+   ↓
+Node ✅
+String ❌
+Only one Node at a time ✅
+```
+
+So your statement can be improved to:
+
+> **`append()` can add multiple Nodes/elements and strings, while `appendChild()` accepts only one Node at a time.**
+
+That's exactly the distinction you should remember.

@@ -1,0 +1,1 @@
+### So HTML is basically a tree of elements, and JavaScript's DOM lets you travel around that tree and modify it.
