@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    body.dark{
+        background-color: black;
+        color: white;
+    }
+    body.white{
+        background-color: white;
+        color: black;
+    }
+    button{
+        border: none;
+        padding: 10px 20px;
+        background-color: rgb(55, 41, 41);
+        color: white;
+        font-weight: bold;
+        border-radius: 7px;
+        cursor: pointer;
+    }
+      button.dark{
+        background-color: rgb(85, 56, 56);
+        color: rgb(204, 196, 255);
+    }
+    button.white{
+        background-color: white;
+        color: black;
+    }
+
+</style>
+<body>
+    
+    <button>Click here to change theme</button>
+
+<script src="script.js"></script>
+</body>
+</html>
