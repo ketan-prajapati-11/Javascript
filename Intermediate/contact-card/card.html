@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="card.css">
+</head>
+<body>
+    
+<section class="scene">
+
+    <!-- side button leftside -->
+    <div class="side-button">
+        <button class="icon-btn add-btn">+</button>
+        <button class="icon-btn up-btn">↑</button>
+        <button class="icon-btn down-btn">↓</button>
+    </div>
+
+    <!-- card stack -->
+    <div class="card-stack">
+
+        <div class="behind-card"></div>
+        <div class="behindsecond"></div>
+
+        <div class="contact-card">
+            <div class="avatar"><img class="avatari" src="" alt=""></div>
+            <h2 class="name"></h2>
+            <div class="detail-row">
+                <span class="label" id="home">Home Town</span>
+                <span class="value" id="homeData"></span>
+            </div>
+            <div class="detail-row">
+                <span class="label" id="catergory">Catergory</span>
+                <span class="value" id="catergoryData"></span>
+            </div>
+            <div class="purpose"></div>
+            <div class="action">
+                <button class="call-btn action-btn">📞  Call</button>
+                <button class="msg-btn action-btn">Message</button>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="side-colors">
+        <button class="color-btn" data-color="blue" style="background-color: blue;"></button>
+        <button class="color-btn" data-color="rgb(7, 7, 19)" style="background-color: rgb(7, 7, 19);"></button>
+        <button class="color-btn" data-color="rgb(59, 59, 59)" style="background-color: rgb(59, 59, 59);"></button>
+        <button class="color-btn" data-color="rgb(145, 125, 135)" style="background-color: rgb(145, 125, 135);"></button>
+    </div>
+
+
+</section>
+
+<div class="overlay hidden" id="overlay">
+    <form class="call-form">
+
+        <h2 class="form-title">New Call</h2>
+
+        <label for="img-url" class="form-label">Image URL</label>
+        <input type="url" id="img-url" class="form-input" placeholder="https://example.com/photo.jpg">
+      
+        <label for="full-name" class="form-label">Full Name</label>
+        <input type="text" id="full-name" class="form-input full-name" placeholder="Enter full name">
+       
+        <label for="home-town" class="form-label">Home town</label>
+        <input type="text" id="home-town" class="form-input home-town" placeholder="Enter home town">
+      
+        <label for="purpose" class="form-label">Purpose</label>
+        <input type="text" id="purpose" class="form-input purpose" placeholder="Enter home town">
+
+        <span class="form-label .catergory">Category</span>
+        <div class="radio-list">
+
+        <label class="radio-option"><input type="radio" name="category" value="Emergency" checked /> Emergency</label>
+        <label class="radio-option"><input type="radio" name="category" value="Important" /> Important</label>
+        <label class="radio-option"><input type="radio" name="category" value="Urgent" /> Urgent</label>
+        <label class="radio-option"><input type="radio" name="category" value="No Rush" /> No Rush</label>
+      </div>
+
+      <button type="submit" class=" form-btn create-btn">Create Note</button>
+      <button type="button" class="form-btn close-btn">Close</button>
+    </form>
+
+
+
+
+</div>
+<script src="card.js"></script>
+</body>
+</html>

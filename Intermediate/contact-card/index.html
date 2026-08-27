@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Call Carousel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <section class="scene">
+
+    <!-- Left side icon buttons -->
+    <div class="side-buttons">
+      <button id="addBtn" class="icon-btn">+</button>
+      <button id="upBtn" class="icon-btn">↑</button>
+      <button id="downBtn" class="icon-btn">↓</button>
+    </div>
+
+    <!-- The carousel: one real card in front, one plain card peeking behind -->
+    <div class="card-stack">
+      <div class="card-behind"></div>
+
+      <div id="contactCard" class="contact-card">
+        <img id="cardAvatar" class="avatar" src="" alt="" />
+        <h2 id="cardName" class="name"></h2>
+
+        <div class="detail-row">
+          <span class="label">Home town</span>
+          <span id="cardTown" class="value"></span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Category</span>
+          <span id="cardCategory" class="value"></span>
+        </div>
+
+        <p id="cardPurpose" class="purpose"></p>
+
+        <div class="actions">
+          <button class="call-btn">📞 Call</button>
+          <button class="message-btn">Message</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right side color swatches -->
+    <div class="side-colors">
+      <button class="dot" data-color="#1c1c1c" style="background:#1c1c1c"></button>
+      <button class="dot" data-color="#241b3d" style="background:#241b3d"></button>
+      <button class="dot" data-color="#3d2416" style="background:#3d2416"></button>
+      <button class="dot" data-color="#123d34" style="background:#123d34"></button>
+    </div>
+
+  </section>
+
+  <!-- The "New Call" form, hidden until the + icon is clicked -->
+  <div id="overlay" class="overlay hidden">
+    <form id="callForm" class="call-form">
+      <h2 class="form-title">New Call</h2>
+
+      <label class="form-label" for="imageUrl">Image URL</label>
+      <input class="form-input" id="imageUrl" type="url" placeholder="https://example.com/photo.jpg" />
+
+      <label class="form-label" for="fullName">Full Name</label>
+      <input class="form-input" id="fullName" type="text" placeholder="Enter full name" required />
+
+      <label class="form-label" for="homeTown">Home Town</label>
+      <input class="form-input" id="homeTown" type="text" placeholder="Enter home town" required />
+
+      <label class="form-label" for="purpose">Purpose</label>
+      <input class="form-input" id="purpose" type="text" placeholder="e.g., Quick appointment note" />
+
+      <span class="form-label">Category</span>
+      <div class="radio-list">
+        <label class="radio-option"><input type="radio" name="category" value="Emergency" checked /> Emergency</label>
+        <label class="radio-option"><input type="radio" name="category" value="Important" /> Important</label>
+        <label class="radio-option"><input type="radio" name="category" value="Urgent" /> Urgent</label>
+        <label class="radio-option"><input type="radio" name="category" value="No Rush" /> No Rush</label>
+      </div>
+
+      <button type="submit" class="create-btn">Create Note</button>
+      <button type="button" id="closeBtn" class="close-btn">Close</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
