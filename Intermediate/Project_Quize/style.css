@@ -1,0 +1,142 @@
+ :root {
+  --bg-color: #ffffff;
+  --nav-bg: #ffffff;
+  --color-primary: #101010;
+  --color-muted: #6b6b6b;
+  --border-color: #ececec;
+
+  --toggle-track-bg: #eef0f3;
+  --toggle-thumb-bg: #ffffff;
+  --toggle-icon-color: #f5a524;
+
+  --logo-bg: #31318a;
+
+  --transition-fast: 0.2s ease;
+}
+
+body.darkmode {
+  --bg-color: #0b0b0c;
+  --nav-bg: #121214;
+  --color-primary: #f5f4f4;
+  --color-muted: #a3a3a3;
+  --border-color: #232326;
+
+  --toggle-track-bg: #26262a;
+  --toggle-thumb-bg: #1c1c1f;
+  --toggle-icon-color: #cbd5f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  transition: background-color var(--transition-fast);
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.25rem;
+  padding: 0 clamp(1.25rem, 4vw, 3.125rem);
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-logo {
+  height: 2rem;
+  width: 2rem;
+  padding: 0.4rem;
+  background-color: var(--logo-bg);
+  border-radius: 0.5rem;
+}
+
+.brand-name {
+  color: var(--color-primary);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- Theme toggle ---------- */
+
+.theme-toggle {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 999px;
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--logo-bg);
+  outline-offset: 3px;
+}
+
+.theme-toggle-track {
+  display: flex;
+  align-items: center;
+  width: 3.5rem;
+  height: 1.85rem;
+  padding: 0.2rem;
+  border-radius: 999px;
+  background-color: var(--toggle-track-bg);
+  transition: background-color var(--transition-fast);
+}
+
+.theme-toggle-thumb {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.45rem;
+  width: 1.45rem;
+  border-radius: 50%;
+  background-color: var(--toggle-thumb-bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  transform: translateX(0);
+  transition: transform 0.3s ease, background-color var(--transition-fast);
+}
+
+.darkmode .theme-toggle-thumb {
+  transform: translateX(1.65rem);
+}
+
+.icon {
+  position: absolute;
+  height: 0.9rem;
+  width: 0.9rem;
+  /* color: var(--toggle-icon-color); */
+  opacity: 0;
+  transform: scale(0.5) rotate(-90deg);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.icon-sun {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.darkmode .icon-sun {
+  opacity: 0;
+  transform: scale(0.5) rotate(90deg);
+}
+
+.darkmode .icon-moon {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}

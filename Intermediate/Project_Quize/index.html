@@ -1,0 +1,45 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Mentor</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="brand">
+        <img class="brand-logo" src="assets/images/bulb.svg" alt="" />
+        <span class="brand-name">Quiz Mentor</span>
+      </div>
+
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false"
+      >
+        <span class="theme-toggle-track">
+          <span class="theme-toggle-thumb">
+   
+            <img class="icon icon-sun" src="assets/images/sun-solid-full.svg" alt="" />
+
+            <!-- moon icon: inline SVG so it works even without a separate file.
+                 Swap this <svg> for <img src="assets/images/your-moon.svg" alt=""> if you have your own. -->
+                  <img class="icon icon-moon" aria-hidden="true" src="assets/images/moon-solid-full.svg" alt="">
+            <!-- <svg class="icon icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.742 13.045a8.088 8.088 0 0 1-2.077.273c-4.446 0-8.052-3.606-8.052-8.052 0-1.383.35-2.685.966-3.82a.75.75 0 0 0-.919-1.062A10.05 10.05 0 0 0 2.5 10.5C2.5 16.299 7.201 21 13 21a10.05 10.05 0 0 0 9.116-5.16.75.75 0 0 0-1.062-.919 8.026 8.026 0 0 1-.312.124z" />
+            </svg> -->
+          </span>
+        </span>
+      </button>
+    </header>
+
+    <script src="script.js"></script>
+  </body>
+</html>
