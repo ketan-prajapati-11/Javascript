@@ -1,45 +1,145 @@
-
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz Mentor</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="navbar">
-      <div class="brand">
-        <img class="brand-logo" src="assets/images/bulb.svg" alt="" />
-        <span class="brand-name">Quiz Mentor</span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Mentor</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="brand">
+      <img class="brand-logo" src="assets/images/bulb.svg" alt="" />
+      <span class="brand-name">Quiz Mentor</span>
+    </div>
+
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+      <span class="theme-toggle-track">
+        <span class="theme-toggle-thumb">
+
+
+          <img class="icon icon-sun" src="assets/images/sun-solid-full.svg" alt="" />
+
+          <img class="icon icon-moon" aria-label="Switch to dark mode" aria-hidden="true"
+            src="assets/images/moon-solid-full.svg" alt="" />
+        </span>
+      </span>
+    </button>
+  </header>
+
+  <main class="main-section">
+    <h1 class="main-title">
+      Test What You Know.
+      <span class="main-title-focus">Instantly.</span>
+    </h1>
+    <p class="main-p">
+      Select your topic. Choose your level. Begin.
+    </p>
+
+    <!-- Quiz selection card -->
+    <div class="quize-selection-card">
+      <div class="quize-setup-heading">
+        <div class="quize-setup-heading-left">
+          <h2>Set Up Your Quiz</h2>
+          <p>Choose your topic and difficulty to generate your quiz.</p>
+        </div>
+        <div class="quize-setup-heading-right">
+          <img src="assets/images/sparkles-svgrepo-com.svg" alt="" />
+        </div>
       </div>
 
-      <button
-        class="theme-toggle"
-        type="button"
-        aria-label="Toggle dark mode"
-        aria-pressed="false"
-      >
-        <span class="theme-toggle-track">
-          <span class="theme-toggle-thumb">
-   
-            <img class="icon icon-sun" src="assets/images/sun-solid-full.svg" alt="" />
+      <form class="quize-selection-form" novalidate>
+        <div class="form-field">
+          <!-- player name -->
+          <label class="form-label username" for="player-name">
+            Player Name <span class="required">*</span>
+          </label>
+          <div class="input-wrap">
+            <img class="input-icon" src="assets/images/user-alt-1-svgrepo-com.svg" alt="" />
+            <input id="player-name" class="player-name" name="player-name" type="text" placeholder="Enter Your Name"
+              required />
+          </div>
+        </div>
 
-            <!-- moon icon: inline SVG so it works even without a separate file.
-                 Swap this <svg> for <img src="assets/images/your-moon.svg" alt=""> if you have your own. -->
-                  <img class="icon icon-moon" aria-hidden="true" src="assets/images/moon-solid-full.svg" alt="">
-            <!-- <svg class="icon icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M20.742 13.045a8.088 8.088 0 0 1-2.077.273c-4.446 0-8.052-3.606-8.052-8.052 0-1.383.35-2.685.966-3.82a.75.75 0 0 0-.919-1.062A10.05 10.05 0 0 0 2.5 10.5C2.5 16.299 7.201 21 13 21a10.05 10.05 0 0 0 9.116-5.16.75.75 0 0 0-1.062-.919 8.026 8.026 0 0 1-.312.124z" />
-            </svg> -->
-          </span>
-        </span>
-      </button>
-    </header>
+        <div class="form-field">
+          <!-- category selection -->
+          <label class="form-label" for="quiz-category">
+            Select Category
+          </label>
+          <div class="input-wrap select-wrap">
+            <img class="input-icon" src="assets/images/book.svg" alt="" />
+            <select id="quiz-category" class="quize-category-name player-name" name="quiz-category">
+              <option value="math">Math</option>
+              <option value="science">Science</option>
+              <option value="history">History</option>
+              <!-- <option value="sports">Sports</option>
+              <option value="technology">Technology</option>
+              <option value="entertainment">Entertainment</option> -->
+            </select>
+          </div>
+        </div>
 
-    <script src="script.js"></script>
-  </body>
+        <!-- difficulty level -->
+        <div class="form-field">
+          <span class="form-label">Difficulty Level</span>
+          <div class="input-wrap player-name difficulty-group">
+            <label class="difficulty-option">
+              <input type="radio" name="difficulty" value="easy">
+              <span>Easy</span>
+            </label>
+
+            <label class="difficulty-option">
+              <input type="radio" name="difficulty" value="medium" checked>
+              <span>Medium</span>
+            </label>
+
+            <label class="difficulty-option">
+              <input type="radio" name="difficulty" value="hard">
+              <span>Hard</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- ----number count---  -->
+        <div class="number-count-container">
+
+          <div class="number-count-left">
+            <p class="num-count-heading">Number of Questions</p>
+            <p class="num-count-desc">Recommended count is 10</p>
+          </div>
+
+
+          <div class="number-count-right">
+
+
+            <div class="minus-icon icon-bg">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 12L18 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div class="number-count icon-bg">10</div>
+            <div class="plus-icon icon-bg">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 12H20M12 4V20" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </div>
+
+          </div>
+
+        </div>
+
+        <button class="start-quize-btn" type="submit">Start Quize &rarr; </button>
+
+      </form>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
 </html>

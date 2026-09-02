@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Mentor — Question</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+ <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="question.css" />
+
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="brand">
+      <img class="brand-logo" src="assets/images/bulb.svg" alt="" />
+      <span class="brand-name">Quiz Mentor</span>
+    </div>
+
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+      <span class="theme-toggle-track">
+        <span class="theme-toggle-thumb">
+          <img class="icon icon-sun" src="assets/images/sun-solid-full.svg" alt="" aria-hidden="true" />
+          <img class="icon icon-moon" src="assets/images/moon-solid-full.svg" alt="" aria-hidden="true" />
+        </span>
+      </span>
+    </button>
+  </header>
+
+  <main class="question-section">
+    <div class="question-page-wrap">
+
+      <!-- Top row: player name + category/difficulty badge -->
+      <div class="question-topbar">
+        <span class="question-player-name">John Doe</span>
+
+        <span class="quiz-tag quiz-tag--hard">
+         <span class="selected-category"> Math</span>Catergory &middot; <span class="selected-difficulty-level"> Hard</span>
+        </span>
+      </div>
+
+      <!-- Question card -->
+      <section class="question-card">
+
+        <div class="question-card-head">
+          <h1 class="question-title">Calculate the Derivative</h1>
+
+          <div class="question-timer" role="timer" aria-label="Time remaining">
+            <svg class="question-timer-ring" viewBox="0 0 64 64">
+              <circle class="timer-track" cx="32" cy="32" r="27"></circle>
+              <circle class="timer-progress" cx="32" cy="32" r="27"></circle>
+            </svg>
+            <span class="question-timer-text">1:00</span>
+          </div>
+        </div>
+
+        <hr class="question-divider" />
+
+        <p class="question-prompt">
+          What is the derivative of the function
+          <code class="question-math">f(x) = 3x<sup>4</sup> - 2x<sup>2</sup> + 5x - 7</code>
+          with respect to x?
+        </p>
+
+        <!-- Answer options -->
+        <fieldset class="question-options">
+          <legend class="sr-only">Answer options</legend>
+
+          <label class="question-option">
+            <input type="radio" name="answer" value="a">
+            <span class="option-marker">A</span>
+            <span class="option-text">12x<sup>3</sup> - 4x + 5</span>
+            <span class="option-radio" aria-hidden="true"></span>
+          </label>
+
+          <label class="question-option">
+            <input type="radio" name="answer" value="b" checked>
+            <span class="option-marker">B</span>
+            <span class="option-text">12x<sup>3</sup> - 4x<sup>2</sup> + 5</span>
+            <span class="option-radio" aria-hidden="true"></span>
+          </label>
+
+          <label class="question-option">
+            <input type="radio" name="answer" value="c">
+            <span class="option-marker">C</span>
+            <span class="option-text">12x<sup>3</sup> - 2x + 5</span>
+            <span class="option-radio" aria-hidden="true"></span>
+          </label>
+
+          <label class="question-option">
+            <input type="radio" name="answer" value="d">
+            <span class="option-marker">D</span>
+            <span class="option-text">12x<sup>4</sup> - 4x + 5</span>
+            <span class="option-radio" aria-hidden="true"></span>
+          </label>
+        </fieldset>
+
+        <hr class="question-divider question-divider--footer" />
+
+        <!-- Footer nav -->
+        <div class="question-footer">
+          <button class="q-btn q-btn--ghost" type="button">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+             Previous
+          </button>
+
+          <div class="question-footer-center">
+            <button class="q-btn q-btn--primary" type="button">
+              Save &amp; Continue  &rarr;
+              <!-- <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12.5L9.5 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg> -->
+            </button>
+            <span class="question-count">Question <span class="curr-question-number">3</span> of <span></span></span>
+          </div>
+
+          <!-- `disabled` should only be set (via JS) on the actual last question -->
+          <button class="q-btn q-btn--ghost" type="button">
+            Next
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="question-progress-track">
+          <div class="question-progress-fill" style="width: 30%;"></div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
