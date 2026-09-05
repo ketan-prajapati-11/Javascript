@@ -177,7 +177,8 @@ body.darkmode .question-card {
   stroke: var(--color-title-focus, #5b4fe8);
   stroke-linecap: round;
   stroke-dasharray: 169.6; /* 2 * PI * r(27) */
-  stroke-dashoffset: 42.4; /* static demo value — drive this from JS for a real countdown */
+  stroke-dashoffset: 0; /* full ring at 15s — question.js counts this down each second */
+  transition: stroke-dashoffset 1s linear;
 }
 
 .question-timer-text {
@@ -319,12 +320,69 @@ body.darkmode .question-card {
   box-shadow: 0 0 0 3px rgba(105, 90, 216, 0.18);
 }
 
+/* ---------- answer reveal (correct / wrong) ----------
+   Placed after the rules above so equal-specificity ties resolve in
+   favor of these — reuses the same --tag-easy-*/--tag-hard-* variables
+   already defined at the top of this file for the difficulty pill. */
+
+.option-marker svg {
+  height: 1.1rem;
+  width: 1.1rem;
+}
+
+.question-option:has(input:disabled) {
+  cursor: default;
+}
+
+.question-option.question-option--correct {
+  border-color: var(--tag-easy-text);
+  background-color: var(--tag-easy-bg);
+  box-shadow: none;
+}
+
+.question-option.question-option--correct .option-marker {
+  background-color: var(--tag-easy-text);
+  border-color: var(--tag-easy-text);
+  color: #ffffff;
+}
+
+.question-option.question-option--wrong {
+  border-color: var(--tag-hard-text);
+  background-color: var(--tag-hard-bg);
+  box-shadow: none;
+}
+
+.question-option.question-option--wrong .option-marker {
+  background-color: var(--tag-hard-text);
+  border-color: var(--tag-hard-text);
+  color: #ffffff;
+}
+
+.question-feedback {
+  margin-top: 0.75rem;
+  min-height: 1.2em; /* reserves space so the layout doesn't jump when it fills in */
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.question-feedback--correct {
+  color: var(--tag-easy-text);
+}
+
+.question-feedback--wrong {
+  color: var(--tag-hard-text);
+}
+
+.question-feedback--skipped {
+  color: var(--tag-medium-text);
+}
+
 /* ---------- footer nav ---------- */
 
 .question-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* was space-between — only the center block is left now that Previous/Next are gone */
   gap: 1rem;
   margin-top: 0.25rem;
 }
@@ -379,6 +437,16 @@ body.darkmode .question-card {
 .q-btn--primary:hover {
   transform: scale(1.02);
   filter: brightness(0.92);
+}
+
+.q-btn--primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.q-btn--primary:disabled:hover {
+  transform: none;
+  filter: none;
 }
 
 .question-count {

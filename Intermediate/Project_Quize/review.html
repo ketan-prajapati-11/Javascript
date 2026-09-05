@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Mentor — Review</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="review.css">
+</head>
+<body>
+
+    <header class="navbar">
+      <div class="brand">
+        <img class="brand-logo" src="assets/images/bulb.svg" alt="" />
+        <span class="brand-name">Quiz Mentor</span>
+      </div>
+
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+        <span class="theme-toggle-track">
+          <span class="theme-toggle-thumb">
+            <img class="icon icon-sun" src="assets/images/sun-solid-full.svg" alt="" aria-hidden="true" />
+            <img class="icon icon-moon" src="assets/images/moon-solid-full.svg" alt="" aria-hidden="true" />
+          </span>
+        </span>
+      </button>
+    </header>
+
+    <main class="review-section">
+      <div class="review-page-wrap">
+
+        <!-- Heading: mirrors the hero-over-card pattern on index.html -->
+        <div class="review-heading">
+          <h1 class="review-title">Review Your Answers</h1>
+          <p class="review-subtitle">
+            <span class="review-player-name"></span> scored
+            <span class="review-score"></span> — see how each question went.
+          </p>
+        </div>
+
+        <!-- Top row: category/difficulty badge (same shape as question.html) -->
+        <div class="review-topbar">
+          <span class="quiz-tag">
+            <span class="selected-category"></span>Category &middot; <span class="selected-difficulty-level"></span>
+          </span>
+
+          <span class="review-status-badge" id="status-badge"></span>
+        </div>
+
+        <!-- Review card -->
+        <section class="review-card">
+
+          <h2 class="review-question-title"></h2>
+
+          <hr class="review-divider" />
+
+          <p class="review-prompt"></p>
+
+          <!-- Answer options (read-only) -->
+          <div class="review-options" id="review-options"></div>
+
+          <hr class="review-divider review-divider--footer" />
+
+          <!-- Footer nav -->
+          <div class="review-footer">
+            <button id="prev-question-btn" class="rv-btn rv-btn--ghost" type="button">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              Previous
+            </button>
+
+            <span class="review-count">Question <span class="curr-question-number"></span> of <span class="total-question-number"></span></span>
+
+            <button id="next-question-btn" class="rv-btn rv-btn--ghost" type="button">
+              Next
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </button>
+
+            <!-- Shown only on the last question, in place of Next -->
+            <a id="back-to-results-btn" class="rv-btn rv-btn--primary" href="result.html" hidden>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 12H5"></path>
+                <path d="M12 19l-7-7 7-7"></path>
+              </svg>
+              Back to Results
+            </a>
+          </div>
+
+          <!-- Progress bar -->
+          <div class="review-progress-track">
+            <div class="review-progress-fill" id="review-progress-fill"></div>
+          </div>
+
+        </section>
+      </div>
+    </main>
+
+    <script src="review.js"></script>
+</body>
+</html>

@@ -1,7 +1,10 @@
 /* =====================================================
    HOME PAGE (index.html) ONLY.
-   The question bank lives in its own file (questionBank.js)
-   — it's loaded on question.html, not here.
+   The question bank now lives in its own file
+   (questionBank.js) — it doesn't belong here, and having
+   it here meant this file couldn't safely be reused on
+   question.html (this file also queries elements like
+   .quize-selection-form that only exist on the home page).
    ===================================================== */
 
 /* ===================== Theme toggle ===================== */
@@ -36,7 +39,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
   }
 });
 
-/* ===================== Number of question(selecting the howmany quesiton want to attampt) ===================== */
+/* ===================== Number of questions stepper ===================== */
 const minusBtn = document.querySelector('.minus-icon');
 const plusBtn = document.querySelector('.plus-icon');
 const countDisplay = document.querySelector('.number-count');
@@ -54,20 +57,17 @@ function updateQuestionCount(delta) {
 minusBtn.addEventListener('click', () => updateQuestionCount(-STEP));
 plusBtn.addEventListener('click', () => updateQuestionCount(STEP));
 
-/* ===================== Start Quiz: save setup + navigate ===================== */
-const startQuizLink = document.getElementById('start-quiz-link');
+/* ===================== Form submit: save setup + go to the quiz ===================== */
+const quizForm = document.querySelector('.quize-selection-form');
 const playerNameInput = document.getElementById('player-name');
 const categorySelect = document.getElementById('quiz-category');
 
-startQuizLink.addEventListener('click', (e) => {
-  e.preventDefault(); // don't follow the link until we've validated + saved
+quizForm.addEventListener('submit', (e) => {
+  e.preventDefault();
 
   const playerName = playerNameInput.value.trim();
   if (!playerName) {
     playerNameInput.focus();
-    alert("Enter name")
-    
-    
     return;
   }
 
@@ -83,9 +83,9 @@ startQuizLink.addEventListener('click', (e) => {
 
   const quizSetup = { playerName, category, categoryLabel, difficulty, questionCount };
 
-  // Hand this off to question.html via localStorage, since a plain
-  // link can't carry a JS object between pages.
+  // Hand this off to question.html via localStorage, since a normal
+  // link/redirect can't carry JS objects between pages.
   localStorage.setItem('quizSetup', JSON.stringify(quizSetup));
 
-  window.location.href = startQuizLink.href;
+  window.location.href = 'question.html';
 });

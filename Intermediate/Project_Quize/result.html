@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Mentor — Result</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="result.css" />
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="brand">
+      <img class="brand-logo" src="assets/images/bulb.svg" alt="" />
+      <span class="brand-name">Quiz Mentor</span>
+    </div>
+
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+      <span class="theme-toggle-track">
+        <span class="theme-toggle-thumb">
+          <img class="icon icon-sun" src="assets/images/sun-solid-full.svg" alt="" aria-hidden="true" />
+          <img class="icon icon-moon" src="assets/images/moon-solid-full.svg" alt="" aria-hidden="true" />
+        </span>
+      </span>
+    </button>
+  </header>
+
+  <main class="result-section">
+    <div class="result-page-wrap">
+
+      <!-- Result card -->
+      <section class="result-card">
+
+        <div class="result-icon-circle" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 21h8"></path>
+            <path d="M12 17v4"></path>
+            <path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"></path>
+            <path d="M7 5H4a2 2 0 0 0 0 4h3"></path>
+            <path d="M17 5h3a2 2 0 0 1 0 4h-3"></path>
+          </svg>
+        </div>
+
+        <h1 class="result-title">Quiz Completed!</h1>
+        <p class="result-subtitle">Great job! Here's how you performed.</p>
+
+        <!-- Score ring — same static-demo pattern as the question-page
+             timer ring: stroke-dashoffset is hardcoded here, drive it
+             from JS later using the real score / totalQuestions. -->
+        <div class="result-score-ring">
+          <svg class="result-score-ring-svg" viewBox="0 0 200 200">
+            <circle class="score-track" cx="100" cy="100" r="90"></circle>
+            <circle class="score-progress" cx="100" cy="100" r="90"></circle>
+          </svg>
+          <div class="result-score-text">
+            <span class="result-score-value">7<span class="result-score-total">/10</span></span>
+            <span class="result-score-label">Score</span>
+          </div>
+        </div>
+
+        <!-- Correct / wrong breakdown -->
+        <div class="result-stats">
+          <div class="result-stat result-stat--correct">
+            <span class="result-stat-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <path d="M22 4 12 14.01l-3-3"></path>
+              </svg>
+            </span>
+            <span class="result-stat-info">
+              <span class="result-stat-value">7</span>
+              <span class="result-stat-label">Correct</span>
+            </span>
+          </div>
+
+          <div class="result-stat result-stat--wrong">
+            <span class="result-stat-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="m15 9-6 6"></path>
+                <path d="m9 9 6 6"></path>
+              </svg>
+            </span>
+            <span class="result-stat-info">
+              <span class="result-stat-value">3</span>
+              <span class="result-stat-label">Wrong</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- review-answers-btn: no target page/section exists yet,
+             left as a plain button until that feature is built -->
+        <button id="review-answers-btn" class="r-btn r-btn--ghost r-btn--full" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+          Review Answers
+        </button>
+
+        <a id="home-link" href="index.html" class="r-btn r-btn--primary r-btn--full">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"></path>
+            <path d="M9 22V12h6v10"></path>
+          </svg>
+          Home
+        </a>
+
+      </section>
+    </div>
+  </main>
+
+  <script src="result.js"></script>
+</body>
+
+</html>

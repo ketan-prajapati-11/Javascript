@@ -19,8 +19,12 @@
     <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
       <span class="theme-toggle-track">
         <span class="theme-toggle-thumb">
-          <img class="icon icon-sun" src="assets/images/sun-solid-full.svg" alt="" aria-hidden="true" />
-          <img class="icon icon-moon" src="assets/images/moon-solid-full.svg" alt="" aria-hidden="true" />
+
+
+          <img class="icon icon-sun" src="assets/images/sun-solid-full.svg" alt="" />
+
+          <img class="icon icon-moon" aria-label="Switch to dark mode" aria-hidden="true"
+            src="assets/images/moon-solid-full.svg" alt="" />
         </span>
       </span>
     </button>
@@ -47,10 +51,7 @@
         </div>
       </div>
 
-      <!-- No longer a <form>: there's no native submit action anymore
-           now that Start Quiz is a link, so a plain container avoids
-           the browser trying to auto-submit on Enter in the name field. -->
-      <div class="quize-selection-form">
+      <form class="quize-selection-form" novalidate>
         <div class="form-field">
           <!-- player name -->
           <label class="form-label username" for="player-name">
@@ -74,9 +75,9 @@
               <option value="math">Math</option>
               <option value="science">Science</option>
               <option value="history">History</option>
-              <option value="fun">Fun</option>
-              <!-- <option value="technology">Technology</option> -->
-              <!-- <option value="entertainment">Entertainment</option> -->
+              <!-- <option value="sports">Sports</option>
+              <option value="technology">Technology</option>
+              <option value="entertainment">Entertainment</option> -->
             </select>
           </div>
         </div>
@@ -131,12 +132,10 @@
           </div>
 
         </div>
-        <div class="start-quize-box">
-        <a id="start-quiz-link" href="question.html" class="start-quize-btn">Start Quize &rarr;</a>
 
-        </div>
+        <button class="start-quize-btn" type="submit">Start Quize &rarr; </button>
 
-      </div>
+      </form>
     </div>
   </main>
 

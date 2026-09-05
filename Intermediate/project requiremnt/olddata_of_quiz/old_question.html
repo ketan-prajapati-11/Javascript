@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz Mentor — Question</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="question.css" />
+
 </head>
 
 <body>
@@ -35,7 +36,7 @@
         <span class="question-player-name">John Doe</span>
 
         <span class="quiz-tag quiz-tag--hard">
-          <span class="selected-category">Math</span>Category &middot; <span class="selected-difficulty-level">Hard</span>
+         <span class="selected-category"> Math</span>Catergory &middot; <span class="selected-difficulty-level"> Hard</span>
         </span>
       </div>
 
@@ -50,7 +51,7 @@
               <circle class="timer-track" cx="32" cy="32" r="27"></circle>
               <circle class="timer-progress" cx="32" cy="32" r="27"></circle>
             </svg>
-            <span class="question-timer-text">0:15</span>
+            <span class="question-timer-text">1:00</span>
           </div>
         </div>
 
@@ -95,21 +96,34 @@
           </label>
         </fieldset>
 
-        <!-- Filled in by lockAnswer() in question.js once this question
-             is answered (or timed out) — empty/hidden until then. -->
-        <p class="question-feedback" aria-live="polite"></p>
-
         <hr class="question-divider question-divider--footer" />
 
-        <!-- Footer nav — Previous/Next removed: each question is now a
-             timed, forward-only step (see the 15s countdown in question.js) -->
+        <!-- Footer nav -->
         <div class="question-footer">
+          <button class="q-btn q-btn--ghost" type="button">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+             Previous
+          </button>
+
           <div class="question-footer-center">
-            <button id="save-continue-btn" class="q-btn q-btn--primary" type="button">
-              Save &amp; Continue
+            <button class="q-btn q-btn--primary" type="button">
+              Save &amp; Continue  &rarr;
+              <!-- <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12.5L9.5 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg> -->
             </button>
-            <span class="question-count">Question <span class="curr-question-number">3</span> of <span class="total-question-number"></span></span>
+            <span class="question-count">Question <span class="curr-question-number">3</span> of <span></span></span>
           </div>
+
+          <!-- `disabled` should only be set (via JS) on the actual last question -->
+          <button class="q-btn q-btn--ghost" type="button">
+            Next
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
         </div>
 
         <!-- Progress bar -->
@@ -121,9 +135,7 @@
     </div>
   </main>
 
-  <!-- questionBank.js must load first — question.js uses its globals -->
-  <script src="questionBank.js"></script>
-  <script src="question.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
