@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toaster</title>
+    <style>
+       .container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.right {
+    right: .4375rem;
+}
+
+.left {
+    left: 7px;
+}
+
+.top {
+    top: 8px;
+}
+
+.bottom {
+    bottom: 8px;
+}
+
+.box {
+    padding: 5px;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.dark {
+    background-color: rgb(6, 5, 5);
+    border: 1px solid black;
+    color: white;
+}
+
+.light {
+    background-color: white;
+    border: 1px solid white;
+    color: black;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="container"></div>
+
+    <script src="toaster.js"></script>
+</body>

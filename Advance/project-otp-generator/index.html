@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP - Verification</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="card">
+        <form class="otp-form">
+            <div class="display-otp">
+                111111
+            </div>
+            <div class="timer">
+                <div class="timer-digit"> 00:30 </div>
+                <div class="timer-bar">
+                    <div class="progress-bar" style="--progress: 70%;"></div>
+                </div>
+            </div>
+            <div class="status">
+                <div class="verified">
+                    Verified OTP
+                </div>
+                <div class="not-verified">
+                    Fail to Verify: Try again
+                </div>
+            </div>
+            <label for="inp-otp"></label>
+            <input type="text" id="inp-otp" placeholder="Enter OTP " required>
+            <div class="attempts">
+                <span>3 attempt left /</span><span class="resend-otp">Resend-otp</span>
+            </div>
+            <div class="btns">
+                <button class="btn genarate-otp">Generate OTP</button>
+                <button class="btn verify" type="submit">Verify</button>
+
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
