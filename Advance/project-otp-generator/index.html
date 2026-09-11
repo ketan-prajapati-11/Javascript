@@ -16,28 +16,39 @@
                 111111
             </div>
             <div class="timer">
-                <div class="timer-digit"> 00:30 </div>
+                <div class="timer-digit">00:30</div>
                 <div class="timer-bar">
-                    <div class="progress-bar" style="--progress: 70%;"></div>
+                    <div class="progress-bar" style="--progress: 0%;"></div>
                 </div>
             </div>
             <div class="status">
-                <div class="verified">
+                <div class="hidden verified">
                     Verified OTP
                 </div>
-                <div class="not-verified">
+                <div class="hidden non-verified">
                     Fail to Verify: Try again
                 </div>
             </div>
-            <label for="inp-otp"></label>
-            <input type="text" id="inp-otp" placeholder="Enter OTP " required>
+
+               <input
+                type="text"
+                id="inp-otp"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                placeholder="Enter OTP"
+                maxlength="6"
+                minlength="6"
+                
+                required
+            >
+
             <div class="attempts">
-                <span>3 attempt left /</span><span class="resend-otp">Resend-otp</span>
+                <span class="left-attempt">3</span> attempts left &middot;
+                <button type="button" class="link-btn resend-otp">Resend OTP</button>
             </div>
             <div class="btns">
-                <button class="btn genarate-otp">Generate OTP</button>
+                <button class="btn generate-otp" type="button">Generate OTP</button>
                 <button class="btn verify" type="submit">Verify</button>
-
             </div>
         </form>
     </div>
