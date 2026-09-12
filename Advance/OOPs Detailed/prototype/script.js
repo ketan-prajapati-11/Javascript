@@ -54,3 +54,18 @@ console.log(mayaAccount);
 
 ajayAccount.showDetail();
 mayaAccount.showDetail();
+ 
+//----- class in prototype
+// class in we can dirctly use prototype without writting somwhere elase 
+class Student1{
+    constructor(name,age){
+        this.name= name;
+        this.age= age;
+
+    }
+    printStudent(){
+        console.log(`student name is ${this.name} and age is ${this.age}`)
+    }
+}
+const stu1 = new Student1("Ram",11)
+stu1.printStudent()
