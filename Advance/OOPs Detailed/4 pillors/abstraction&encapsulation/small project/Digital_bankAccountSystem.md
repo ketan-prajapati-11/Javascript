@@ -51,5 +51,5 @@ Requirements:
 Add a private field #failedAttempts = 0
 If withdraw() or checkBalance() is called with the wrong PIN 3 times in a row, the account should lock.
 Add a private field #isLocked = false
-Once locked, no operation should work (even with the correct PIN) until an unlockAccount(correctPin) method is called successfully with... think about this: if the account is locked, should entering the correct PIN unlock it? Or should it require a separate admin/reset method? (Design decision — pick one and justify it to yourself.)
+Once locked, no operation should work (even with the correct PIN) until an unlockAccount(correctPin) method is called successfully with... think about this: if the account is locked, should entering the correct PIN unlock it? Or should it require a separate admin/reset method? (Design dchecision — pick one and justify it to yourself.)
 On any successful PIN entry, reset #failedAttempts back to 0

@@ -21,7 +21,7 @@ class BankAccount {
     this.#transationHistory.push({
       date: date.toLocaleDateString("en-IN"),
       time: date.toLocaleTimeString(),
-      type: "DEPOSITE",
+      type: type,
       amount: amount,
       balanceAfter: this.#balance,
     });
@@ -51,16 +51,16 @@ class BankAccount {
         );
         return false;
       } else if (amount <= 0) {
-        this.#failedAttempts === 0;
+        this.#failedAttempts = 0;
         console.log("Entered Withdraw amount more than 0");
 
         return false;
       } else if (amount > this.#balance) {
-        this.#failedAttempts === 0;
+        this.#failedAttempts =0;
         console.log("Not sufficent Balance to Widhraw that amount");
         return false;
       } else {
-        this.#failedAttempts === 0;
+        this.#failedAttempts =0;
         console.log(`${amount} sucessfully Withdrawed, collect it`);
         this.#balance -= amount;
 
@@ -84,7 +84,7 @@ class BankAccount {
         );
         return false;
       } else {
-        this.#failedAttempts === 0;
+        this.#failedAttempts = 0;
         console.log(`${this.accountHolderName} balance is: ${this.#balance}`);
         return true;
       }
