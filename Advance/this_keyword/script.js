@@ -5,7 +5,7 @@ function me(){
     console.log(this)
 }
 me()
-// using the strict mode  that value will be undefiend 
+// using the strict mode  this value will be undefiend 
 //if we are not using the strict mode then  because of the  s has something known this substitution that convert the undefined into the gloabl object in the browser the global object is this
 window.me() // give the window object because we are refering to this to that window
 let st1 ={
