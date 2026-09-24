@@ -59,12 +59,12 @@ signupForm.addEventListener('submit', function (e) {
 
     alert('Account created successfully! Redirecting to login...');
 
-    // Redirect to login page after successful signup
+    // Redirect to login page after signup
     window.location.href = 'login.html';
 });
 
-// ===================== "Click here" -> Login redirect =====================
-// Handles the "Have an account? click here to Login" link
+// ===================== "Click here" -> =====================
+
 const loginLink = document.querySelector('.newUser a');
 if (loginLink) {
     loginLink.addEventListener('click', function (e) {
