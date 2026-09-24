@@ -22,7 +22,7 @@ function isEmailTaken(email) {
     return users.some(user => user.email.toLowerCase() === email.toLowerCase());
 }
 
-// ===================== Form Handling =====================
+// ===================== Sign Up Form Handling =====================
 
 const signupForm = document.querySelector('form');
 
@@ -34,7 +34,6 @@ signupForm.addEventListener('submit', function (e) {
     const photoUrl = document.getElementById('photoUrl').value.trim();
     const password = document.getElementById('password').value;
 
-    // Basic guard (in addition to native "required" validation)
     if (!username || !email || !password) {
         alert('Please fill in all required fields.');
         return;
@@ -42,14 +41,15 @@ signupForm.addEventListener('submit', function (e) {
 
     if (isEmailTaken(email)) {
         alert('An account with this email already exists. Please login instead.');
+        window.location.href = 'login.html';
         return;
     }
 
     const newUser = {
         username: username,
         email: email,
-        photoUrl: photoUrl || '', // optional
-        password: password,       // plain text — see note below
+        photoUrl: photoUrl || '',
+        password: password, // plain text — prototype only, see earlier note
         createdAt: new Date().toISOString()
     };
 
@@ -57,9 +57,18 @@ signupForm.addEventListener('submit', function (e) {
     users.push(newUser);
     saveUsers(users);
 
-    alert('Account created successfully! You can now login.');
-    signupForm.reset();
+    alert('Account created successfully! Redirecting to login...');
 
-    // Redirect to login page after signup
+    // Redirect to login page after successful signup
     window.location.href = 'login.html';
 });
+
+// ===================== "Click here" -> Login redirect =====================
+// Handles the "Have an account? click here to Login" link
+const loginLink = document.querySelector('.newUser a');
+if (loginLink) {
+    loginLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.location.href = 'login.html';
+    });
+}
