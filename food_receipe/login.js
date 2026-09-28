@@ -57,16 +57,16 @@ loginForm.addEventListener('submit', function (e) {
     const password = document.getElementById('password').value;
 
     if (!email || !password) {
-        alert('Please enter both email and password.');
+        alert('Please enter email or password not Entered');
         return;
     }
 
     const matchedUser = validateLogin(email, password);
 
     if (matchedUser) {
-        // Store the logged-in user's session so homepage.html can greet them
+        // Store the logged-in user's session so home.html can greet them
         localStorage.setItem('recipeApp_loggedInUser', JSON.stringify(matchedUser));
-        window.location.href = 'homepage.html';
+        window.location.href = 'home.html';
     } else {
         alert('Incorrect email or password. Please try again.');
     }
