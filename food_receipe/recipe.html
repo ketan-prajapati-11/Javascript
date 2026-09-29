@@ -7,6 +7,7 @@
     <title>Recipes</title>
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="recipe.css">
 
 </head>
 
@@ -25,9 +26,9 @@
 
 
             <ul class="nav_menu">
-                <li class="home_menu"><a href="#">Home</a></li>
-                <li class="Recipe_menu"><a href="#">Recipe</a></li>
-                <li class="fevorite_menu"><a href="#">Fevorites</a></li>
+                <li class="home_menu"><a href="home.html">Home</a></li>
+                <li class="Recipe_menu"><a href="recipe.html">Recipe</a></li>
+                <li class="fevorite_menu"><a href="favorites.html">Fevorites</a></li>
             </ul>
 
             <div class="right-menu">
@@ -70,13 +71,62 @@
         </div>
     </head>
 
+    <main class="main">
+
+        <div class="recipe-card">
+            <h3 class="recipe-name">
+                Mini chilli beef pies
+            </h3>
+            <div class="recipe-img">
+                <img class="recipe-pic" src="https://www.themealdb.com/images/media/meals/6sarfo1762340107.jpg" alt="mealImg">
+            </div>
+            
+            <ul class="category">
+                <li class="sub-cat1">strCategory - Beef </li>
+                <li class="sub-cat2">strArea - Australian </li>
+                <li class="sub-cat3">strCountry - Australian </li>
+            </ul>
+
+            <h4>ingredients</h4>
+            <div class="ingredients-container">    
+                <div class="ingredient">
+                    <div class="ingredient-name">soy sauce</div>
+                <div class="ingredient-measure">450g</div>
+                </div>
+                
+            </div>
+            <div class="recipe">
+              <h4> Instructions</h4>
+              <p class="recipe-method">  step 1\r\nTo make chilli, heat oil in a pan and fry onion for 5 mins until soft. Add spices; fry for 1
+                min. Stir in beef and cook for a few mins. Add tomato purée, stock and cinnamon. Give it a stir, bring
+                to the boil, then simmer for 15-20 mins until very little liquid is left. Add beans 5 mins before the
+                end of cooking. Check seasoning and cool.\r\n\r\nstep 2\r\nHeat oven to 200C/fan 180C/gas 6. Using a 7cm
+                pastry cutter, stamp out 12 circles from the pastry. Use to line a 12-hole mini muffin tray, prick the
+                base of the pastry with a fork, and bake for 10 mins. Remove from oven and cool on a wire tray. Repeat
+                with remaining pastry.\r\n\r\nstep 3\r\nMeanwhile, cook the potato in boiling water until tender. Drain,
+                mash with soured cream and seasoning, then stir through chives. Spoon 1-2 tsp of chilli mix into the
+                pastry cases and top with a tsp of mash. Ruffle mash with a fork; return to the oven for 15 mins or
+                until golden.</p>
+            </div>
 
 
 
-  
+        </div>
+        <div class="btns">
+            <div class="back-btn btn">&larr; Back</div>
+            <div class="favorite-btn btn">Add Favorite Recipe</div>
+            
+        </div>
 
-    <script src="login.js"></script>
-    <script src="recipe.css"></script>
+    </main>
+
+
+
+
+
+
+    <script src="login.js" defer></script>
+    <script src="recipe.js"></script>
 </body>
 
 </html>

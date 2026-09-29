@@ -80,6 +80,7 @@ signupForm.addEventListener('submit', function (e) {
         email: email,
         photoUrl: photoUrl || '',
         password: password, // plain text — prototype only, see earlier note
+        favoriteRecipes: [], // ids of recipes this user liked
         createdAt: new Date().toISOString()
     };
 

@@ -1,0 +1,61 @@
+/* Extra styles for favorites.html (header, cards and tokens come from home.css) */
+
+.page-head {
+  padding: clamp(2rem, 6vw, 3.5rem) 0 clamp(0.5rem, 2vw, 1rem);
+}
+.page-head h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--primary-text);
+}
+.page-head p {
+  margin-top: 12px;
+  color: var(--light-text);
+  line-height: 1.5;
+}
+
+.fav-count {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 3px 13px;
+  border-radius: 999px;
+  background-color: var(--green-soft);
+  color: var(--accent-text);
+  font-size: 0.4em;
+  font-weight: 600;
+  letter-spacing: 0;
+  vertical-align: middle;
+}
+.fav-count[hidden] {
+  display: none;
+}
+
+/* nothing saved yet */
+.empty {
+  margin-top: 24px;
+  padding: 56px 20px;
+  text-align: center;
+  background-color: var(--card-bg);
+  border: 1px dashed var(--option-border);
+  border-radius: 18px;
+}
+.empty[hidden] {
+  display: none;
+}
+.empty h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-text);
+}
+.empty p {
+  margin: 8px 0 18px;
+  color: var(--light-text);
+}
+.empty .pill-btn {
+  display: inline-block;
+  text-decoration: none;
+}

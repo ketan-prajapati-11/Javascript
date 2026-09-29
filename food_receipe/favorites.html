@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorites | Meal Recipe</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="favorites.css">
+</head>
+
+<body>
+
+    <header class="header_section">
+        <div class="logo">
+            <div class="logo_Img">
+                <img src="images/logo.svg" alt="">
+            </div>
+            <div class="logo_name">Meal Recipe</div>
+        </div>
+
+        <ul class="nav_menu" id="nav-menu">
+            <li class="home_menu"><a href="home.html">Home</a></li>
+            <li class="Recipe_menu"><a href="#">Recipe</a></li>
+            <li class="fevorite_menu active"><a href="favorites.html" aria-current="page">Favorites</a></li>
+        </ul>
+
+        <div class="right-menu">
+            <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+                <span class="theme-toggle-track">
+                    <span class="theme-toggle-thumb">
+                        <img class="icon icon-sun" src="images/sun-solid-full.svg" alt="" aria-hidden="true" />
+                        <img class="icon icon-moon" src="images/moon-solid-full.svg" alt="" aria-hidden="true" />
+                    </span>
+                </span>
+            </button>
+
+            <a class="profile" href="profile.html" aria-label="Open my profile">
+                <span class="profile-text" id="profile-name"></span>
+                <span class="avatar" id="avatar"></span>
+            </a>
+
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"
+                aria-controls="nav-menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-head">
+            <h1>My favorites <span class="fav-count" id="fav-count" hidden></span></h1>
+            <p>Your Saved Recipe is shown below</p>
+        </section>
+
+        <section class="recipes">
+            <p class="status" id="status" role="status" hidden></p>
+            <div class="racipe-container" id="recipe-container"></div>
+
+            <div class="empty" id="empty" hidden>
+                <h3>No favorites yet</h3>
+                <p>Click on the the heart button to save Recipe here.</p>
+                <a class="pill-btn" href="home.html">Browse recipes</a>
+            </div>
+        </section>
+    </main>
+
+    
+    <script src="favorite.js"></script>
+</body>
+
+</html>
