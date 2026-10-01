@@ -58,8 +58,22 @@
             </div>
             <div class="profile-actions">
                 <!-- <a class="pill-btn spair" href="home.html">&larr; Back to home</a> -->
+                <button type="button" class="pill-btn" id="edit-btn" aria-expanded="false" aria-controls="edit-form">Edit profile</button>
                 <button type="button" class="logout-btn" id="logout-btn">Log out</button>
             </div>
+
+            <!-- hidden until "Edit profile" is clicked -->
+            <form class="edit-form" id="edit-form" hidden>
+                <div class="edit-field">
+                    <label for="edit-name">Name</label>
+                    <input type="text" id="edit-name" name="username" placeholder="Enter your name" required>
+                </div>
+                <div class="edit-field">
+                    <label for="edit-photo">Profile photo URL</label>
+                    <input type="url" id="edit-photo" name="photoUrl" placeholder="Enter photo URL">
+                </div>
+                <button type="submit" class="save-btn">Save</button>
+            </form>
         </section>
 
         <section class="recipes" id="favorites">

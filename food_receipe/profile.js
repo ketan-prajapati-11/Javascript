@@ -132,6 +132,55 @@ document.getElementById("logout-btn").addEventListener("click", () => {
   window.location.replace("login.html");
 });
 
+// ===================== Edit profile (name + photo URL) =====================
+const editBtn = document.getElementById("edit-btn");
+const editForm = document.getElementById("edit-form");
+const editName = document.getElementById("edit-name");
+const editPhoto = document.getElementById("edit-photo");
+
+// Save in the user's record (recipeApp_users) AND in the logged-in session,
+// so every page that reads the user shows the new name and photo.
+function saveProfile(username, photoUrl) {
+  const users = readJSON(USERS_KEY, []);
+  const index = findUserIndex(users, currentUser.email);
+  if (index > -1) {
+    users[index].username = username;
+    users[index].photoUrl = photoUrl;
+    safeStorageSet(USERS_KEY, JSON.stringify(users));
+  }
+  currentUser.username = username;
+  currentUser.photoUrl = photoUrl;
+  safeStorageSet(SESSION_KEY, JSON.stringify(currentUser));
+}
+
+// "Edit profile" shows / hides the form
+editBtn.addEventListener("click", () => {
+  if (!currentUser) return;
+  const opening = editForm.hidden;
+  if (opening) {
+    editName.value = currentUser.username || "";
+    editPhoto.value = currentUser.photoUrl || "";
+  }
+  editForm.hidden = !opening;
+  editBtn.setAttribute("aria-expanded", String(opening));
+  if (opening) editName.focus();
+});
+
+editForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (!currentUser) return;
+  const username = editName.value.trim();
+  const photoUrl = editPhoto.value.trim();
+  if (!username) {
+    editName.focus();
+    return;
+  }
+  saveProfile(username, photoUrl);
+  renderProfile(currentUser); // update the header + profile card right away
+  editForm.hidden = true;
+  editBtn.setAttribute("aria-expanded", "false");
+});
+
 // ===================== Favorites (stored in the user's data) =====================
 function findUserIndex(users, email) {
   return users.findIndex(

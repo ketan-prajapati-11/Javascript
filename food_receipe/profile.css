@@ -2,6 +2,7 @@
 
 .profile-card {
   display: flex;
+  flex-wrap: wrap; /* lets the edit form open inside the card */
   align-items: center;
   gap: clamp(1rem, 3vw, 1.75rem);
   margin: clamp(1.5rem, 4vw, 2.5rem) 0 clamp(2rem, 5vw, 3rem);
@@ -70,6 +71,62 @@ color: white;
   display: inline-block;
 }
 
+/* Edit profile form (opens inside the profile card) */
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+  flex: 1 1 100%;
+  width: 100%;
+  margin-top: 4px;
+  padding-top: 20px;
+  border-top: 1px solid var(--card-border);
+  text-align: left;
+}
+.edit-form[hidden] {
+  display: none;
+}
+.edit-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.edit-form label {
+  padding-top: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--secondary-text);
+}
+.edit-form input {
+  padding: 10px 14px;
+  border: 1px solid var(--option-border);
+  border-radius: 10px;
+  background-color: var(--option-bg);
+  font-size: 15px;
+  color: var(--primary-text);
+}
+.edit-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background-color: var(--option-bg);
+  box-shadow: 0 0 0 3px var(--ring);
+}
+.save-btn {
+  align-self: flex-start;
+  padding: 10px 26px;
+  border: none;
+  border-radius: 999px;
+  background-color: var(--accent);
+  color: var(--btn-text);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.save-btn:hover {
+  filter: brightness(1.1);
+}
+
 .fav-count {
   display: inline-block;
   margin-left: 6px;
@@ -125,6 +182,9 @@ color: white;
   .profile-actions .logout-btn {
     flex: 1;
     text-align: center;
+  }
+  .save-btn {
+    align-self: stretch;
   }
 }
 @media (max-width: 400px) {
