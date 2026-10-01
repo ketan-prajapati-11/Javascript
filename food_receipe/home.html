@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meal Recipe</title>
+    <title>Home | Meal Recipe</title>
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="home.css">
 </head>
@@ -12,6 +12,7 @@
 <body>
 
     <header class="header_section">
+        <!-- <div class="hero-img"></div> -->
         <div class="logo">
             <div class="logo_Img">
                 <img src="images/logo.svg" alt="">
@@ -45,6 +46,11 @@
                     <button type="button" class="logout-btn" id="logout-btn">Log out</button>
                 </div>
             </div>
+
+              <!-- <a class="profile" href="profile.html" aria-label="Open my profile">
+                <span class="profile-text" id="profile-name"></span>
+                <span class="avatar" id="avatar"></span>
+            </a> -->
 
             <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"
                 aria-controls="nav-menu">
@@ -82,7 +88,7 @@
         <section class="recipes">
             <div class="section-head">
                 <h2 class="section-title" id="section-title">Explore Recipes</h2>
-                <button type="button" class="pill-btn" id="reset-btn">Shuffle recipes</button>
+                <button type="button" class="pill-btn vanish" c id="reset-btn">Shuffle recipes</button>
             </div>
             <p class="status" id="status" role="status" hidden></p>
             <div class="racipe-container" id="recipe-container"></div>

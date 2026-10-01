@@ -1,6 +1,6 @@
-// ===================== Config =====================
+// ===================== starting here =====================
 const API = "https://www.themealdb.com/api/json/v1/1";
-const RANDOM_COUNT = 20; // unique random recipes on the home screen
+const RANDOM_COUNT = 50; // unique random recipes on the home screen
 const SEARCH_DELAY = 400; // ms to wait after typing before searching
 
 // localStorage keys (USERS_KEY and SESSION_KEY are the ones used by login/signup)
@@ -129,16 +129,9 @@ function setProfileMenu(open) {
   profileMenu.hidden = !open;
   profileBtn.setAttribute("aria-expanded", String(open));
 }
-profileBtn.addEventListener("click", () => setProfileMenu(profileMenu.hidden));
-document.getElementById("logout-btn").addEventListener("click", () => {
-  try {
-    localStorage.removeItem(SESSION_KEY);
-  } catch {
-    /* ignore */
-  }
-  window.location.replace("login.html");
-});
+profileBtn.addEventListener("click", () => window.location.replace("profile.html"));
 
+//================================================================
 // ===================== Favorites (saved inside the user's own data) =====================
 // Each user object in USERS_KEY gets a `favoriteRecipes` array of meal ids:
 // { username, email, photoUrl, password, favoriteRecipes: ["52771", "52772"] }
@@ -233,7 +226,7 @@ function createCategoryItem(cat) {
   return li;
 }
 
-async function displayCategory() {
+ async function displayCategory() {
   try {
     const data = await fetchJSON(`${API}/categories.php`);
     const categories = (data.categories || []).filter(
@@ -367,9 +360,9 @@ function renderMeals(meals) {
 }
 
 // ===================== Loading recipes =====================
-let requestId = 0; // ignore results of older requests
-let mode = "random"; // "random" | "category" | "search"
-let randomMeals = []; // last random set, shown again when a search is cancelled
+let requestId = 0; 
+let mode = "random"; 
+let randomMeals = []; 
 let searchTimer = null;
 
 function setResetButton(showBack) {
@@ -381,7 +374,7 @@ function startLoading(title, showBack) {
   sectionTitle.textContent = title;
   setResetButton(showBack);
   setStatus("");
-  showSkeletons();
+  // showSkeletons();
   return id;
 }
 
@@ -443,9 +436,7 @@ async function showRandomRecipes(forceNew = false) {
     setStatus("Something went wrong while loading recipes. Please try again.");
   }
 }
-
-// filter.php only gives id, name and image, so each meal is looked up
-// to get strCategory and strArea for the card tags.
+//----
 async function showCategoryRecipes(category) {
   mode = "category";
   const id = startLoading(`${category} Recipes`, true);

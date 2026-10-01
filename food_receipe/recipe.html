@@ -4,128 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipes</title>
+    <title>Recipe | Meal Recipe</title>
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="recipe.css">
-
 </head>
 
 <body>
 
-    <head>
-        <div class="header_section">
-            <div class="logo">
-                <div class="logo_Img">
-                    <img src="images/logo.svg" alt="" srcset="">
-                </div>
-                <div class="logo_name">
-                    Meal Recipe
-                </div>
+    <header class="header_section">
+        <div class="logo">
+            <div class="logo_Img">
+                <img src="images/logo.svg" alt="">
             </div>
-
-
-            <ul class="nav_menu">
-                <li class="home_menu"><a href="home.html">Home</a></li>
-                <li class="Recipe_menu"><a href="recipe.html">Recipe</a></li>
-                <li class="fevorite_menu"><a href="favorites.html">Fevorites</a></li>
-            </ul>
-
-            <div class="right-menu">
-
-                <div>
-                    <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
-                        <span class="theme-toggle-track">
-                            <span class="theme-toggle-thumb">
-                                <img class="icon icon-sun" src="images/sun-solid-full.svg" alt="" aria-hidden="true" />
-                                <img class="icon icon-moon" src="images/moon-solid-full.svg" alt=""
-                                    aria-hidden="true" />
-                            </span>
-                        </span>
-                    </button>
-                </div>
-
-                <div class="profile"> Profile
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path opacity="0.4"
-                                d="M12.1207 12.78C12.0507 12.77 11.9607 12.77 11.8807 12.78C10.1207 12.72 8.7207 11.28 8.7207 9.50998C8.7207 7.69998 10.1807 6.22998 12.0007 6.22998C13.8107 6.22998 15.2807 7.69998 15.2807 9.50998C15.2707 11.28 13.8807 12.72 12.1207 12.78Z"
-                                stroke="#cdd1d5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            </path>
-                            <path opacity="0.34"
-                                d="M18.7398 19.3801C16.9598 21.0101 14.5998 22.0001 11.9998 22.0001C9.39977 22.0001 7.03977 21.0101 5.25977 19.3801C5.35977 18.4401 5.95977 17.5201 7.02977 16.8001C9.76977 14.9801 14.2498 14.9801 16.9698 16.8001C18.0398 17.5201 18.6398 18.4401 18.7398 19.3801Z"
-                                stroke="#cdd1d5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            </path>
-                            <path
-                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-                                stroke="#cdd1d5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            </path>
-                        </g>
-                    </svg>
-                </div>
-
-            </div>
-
+            <div class="logo_name">Meal Recipe</div>
         </div>
-    </head>
 
-    <main class="main">
+        <ul class="nav_menu" id="nav-menu">
+            <li class="home_menu"><a href="home.html">Home</a></li>
+            <li class="Recipe_menu active"><a href="recipe.html" aria-current="page">Recipe</a></li>
+            <li class="fevorite_menu"><a href="favorites.html">Favorites</a></li>
+        </ul>
 
-        <div class="recipe-card">
-            <h3 class="recipe-name">
-                Mini chilli beef pies
-            </h3>
-            <div class="recipe-img">
-                <img class="recipe-pic" src="https://www.themealdb.com/images/media/meals/6sarfo1762340107.jpg" alt="mealImg">
-            </div>
-            
-            <ul class="category">
-                <li class="sub-cat1">strCategory - Beef </li>
-                <li class="sub-cat2">strArea - Australian </li>
-                <li class="sub-cat3">strCountry - Australian </li>
-            </ul>
+        <div class="right-menu">
+            <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+                <span class="theme-toggle-track">
+                    <span class="theme-toggle-thumb">
+                        <img class="icon icon-sun" src="images/sun-solid-full.svg" alt="" aria-hidden="true" />
+                        <img class="icon icon-moon" src="images/moon-solid-full.svg" alt="" aria-hidden="true" />
+                    </span>
+                </span>
+            </button>
 
-            <h4>ingredients</h4>
-            <div class="ingredients-container">    
-                <div class="ingredient">
-                    <div class="ingredient-name">soy sauce</div>
-                <div class="ingredient-measure">450g</div>
-                </div>
-                
-            </div>
-            <div class="recipe">
-              <h4> Instructions</h4>
-              <p class="recipe-method">  step 1\r\nTo make chilli, heat oil in a pan and fry onion for 5 mins until soft. Add spices; fry for 1
-                min. Stir in beef and cook for a few mins. Add tomato purée, stock and cinnamon. Give it a stir, bring
-                to the boil, then simmer for 15-20 mins until very little liquid is left. Add beans 5 mins before the
-                end of cooking. Check seasoning and cool.\r\n\r\nstep 2\r\nHeat oven to 200C/fan 180C/gas 6. Using a 7cm
-                pastry cutter, stamp out 12 circles from the pastry. Use to line a 12-hole mini muffin tray, prick the
-                base of the pastry with a fork, and bake for 10 mins. Remove from oven and cool on a wire tray. Repeat
-                with remaining pastry.\r\n\r\nstep 3\r\nMeanwhile, cook the potato in boiling water until tender. Drain,
-                mash with soured cream and seasoning, then stir through chives. Spoon 1-2 tsp of chilli mix into the
-                pastry cases and top with a tsp of mash. Ruffle mash with a fork; return to the oven for 15 mins or
-                until golden.</p>
-            </div>
+            <a class="profile" href="profile.html" aria-label="Open my profile">
+                <span class="profile-text" id="profile-name"></span>
+                <span class="avatar" id="avatar"></span>
+            </a>
 
-
-
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"
+                aria-controls="nav-menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
+    </header>
+
+    <main class="recipe-page">
+
+        <!-- back (left) and favorite (right) -->
         <div class="btns">
-            <div class="back-btn btn">&larr; Back</div>
-            <div class="favorite-btn btn">Add Favorite Recipe</div>
-            
+            <a class="action-btn back-btn" href="home.html">&larr; Back to home</a>
+            <button class="action-btn favorite-btn" id="fav-btn" type="button" aria-pressed="false" disabled>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+                <span id="fav-label">Add to favorites</span>
+            </button>
         </div>
+
+        <!-- loading placeholder -->
+        <div class="recipe-top skeleton" style="display: none;" id="loading" aria-hidden="true">
+            <div class="food-img"></div>
+            <div class="sk-stack">
+                <div class="sk-line short"></div>
+                <div class="sk-line"></div>
+                <div class="sk-line"></div>
+            </div>
+        </div>
+
+        <!-- error / not found -->
+        <div class="recipe-error" " id="error" role="alert" hidden>
+            <h2 id="error-title"></h2>
+            <p id="error-text"></p>
+            <div class="error-actions">
+                <button type="button" class="pill-btn" id="retry-btn">Try again</button>
+                <a class="pill-btn" href="home.html">Back to home</a>
+            </div>
+        </div>
+
+        <!-- the recipe -->
+        <article class="recipe-card" id="recipe-card" hidden>
+            <div class="recipe-top">
+                <div class="recipe-img">
+                    <img class="recipe-pic" id="recipe-pic" alt="">
+                </div>
+                <div class="recipe-summary">
+                    <ul class="category" id="tags"></ul>
+                    <h1 class="recipe-name" id="recipe-name"></h1>
+                    <p class="recipe-facts" id="facts"></p>
+                    <div class="recipe-links" id="links"></div>
+                </div>
+            </div>
+
+            <section class="recipe-section" id="ingredients-section">
+                <h2 class="section-title">Ingredients</h2>
+                <ul class="ingredients-container" id="ingredients"></ul>
+            </section>
+
+            <section class="recipe-section recipe" id="steps-section">
+                <h2 class="section-title">Instructions</h2>
+                <ol class="steps" id="steps"></ol>
+            </section>
+        </article>
 
     </main>
 
-
-
-
-
-
-    <script src="login.js" defer></script>
     <script src="recipe.js"></script>
 </body>
 

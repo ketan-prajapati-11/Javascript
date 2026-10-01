@@ -75,21 +75,20 @@ window
     if (!safeStorageGet("theme")) applyTheme(e.matches);
   });
 
-// ===================== Logged-in user + header avatar =====================
+// ===================== Logged-in user =====================
 const currentUser = readJSON(SESSION_KEY, null);
 if (!currentUser || !currentUser.email) {
   window.location.replace("login.html");
 }
 
-function renderHeaderProfile(user) {
+// Show the photo, or the first letter of the name when there is no photo
+function renderAvatar(el, user) {
   const name = user.username || "User";
   const initial = name.trim().charAt(0).toUpperCase() || "U";
-  const avatar = document.getElementById("avatar");
-  document.getElementById("profile-name").textContent = name;
-
   const showInitial = () => {
-    avatar.textContent = initial;
+    el.textContent = initial;
   };
+
   const photo = (user.photoUrl || "").trim();
   if (/^(https?:\/\/|data:image\/)/i.test(photo)) {
     const img = document.createElement("img");
@@ -97,12 +96,41 @@ function renderHeaderProfile(user) {
     img.referrerPolicy = "no-referrer";
     img.addEventListener("error", showInitial); // broken link -> use the letter
     img.src = photo;
-    avatar.textContent = "";
-    avatar.appendChild(img);
+    el.textContent = "";
+    el.appendChild(img);
   } else {
     showInitial();
   }
 }
+
+function renderProfile(user) {
+  const name = user.username || "User";
+  document.title = `${name} | Meal Recipe`;
+  document.getElementById("profile-name").textContent = name;
+  document.getElementById("page-name").textContent = name;
+  document.getElementById("page-email").textContent = user.email || "";
+  renderAvatar(document.getElementById("avatar"), user);
+  renderAvatar(document.getElementById("page-avatar"), user);
+
+  const created = user.createdAt ? new Date(user.createdAt) : null;
+  if (created && !Number.isNaN(created.getTime())) {
+    const since = document.getElementById("page-since");
+    since.textContent = `Member since ${created.toLocaleDateString(undefined, {
+      month: "long",
+      year: "numeric",
+    })}`;
+    since.hidden = false;
+  }
+}
+
+document.getElementById("logout-btn").addEventListener("click", () => {
+  try {
+    localStorage.removeItem(SESSION_KEY);
+  } catch {
+    /* ignore */
+  }
+  window.location.replace("login.html");
+});
 
 // ===================== Favorites (stored in the user's data) =====================
 function findUserIndex(users, email) {
@@ -172,7 +200,7 @@ function createFoodCard(meal) {
   see.dataset.id = meal.idMeal;
   see.textContent = "See recipe";
 
-  // every card here is a favorite, so the heart starts filled
+  // every card on this page is a favorite, so the heart starts filled
   const like = document.createElement("button");
   like.type = "button";
   like.className = "like-img active";
@@ -185,14 +213,14 @@ function createFoodCard(meal) {
   cardBody.className = "food-body";
   cardBody.append(tags, name, see);
 
-  card.append(imgWrap, cardBody, like);
+  card.append(imgWrap, cardBody);
   return card;
 }
 
 recipeContainer.addEventListener("click", (e) => {
   const like = e.target.closest(".like-img");
   if (like) {
-    // un-liking removes the recipe from the user's saved favorites
+    // un-liking here removes the recipe from the user's favorites
     removeFavorite(like.dataset.id);
     like.closest(".food-card").remove();
     refreshState();
@@ -203,19 +231,19 @@ recipeContainer.addEventListener("click", (e) => {
 });
 
 // ===================== Loading + states =====================
-function showSkeletons(count) {
-  recipeContainer.innerHTML = "";
-  const fragment = document.createDocumentFragment();
-  for (let i = 0; i < count; i++) {
-    const card = document.createElement("div");
-    card.className = "food-card skeleton";
-    card.setAttribute("aria-hidden", "true");
-    card.innerHTML =
-      '<div class="food-img"></div><div class="food-body"><div class="sk-line short"></div><div class="sk-line"></div><div class="sk-line"></div></div>';
-    fragment.appendChild(card);
-  }
-  recipeContainer.appendChild(fragment);
-}
+// function showSkeletons(count) {
+//   recipeContainer.innerHTML = "";
+//   const fragment = document.createDocumentFragment();
+//   for (let i = 0; i < count; i++) {
+//     const card = document.createElement("div");
+//     card.className = "food-card skeleton";
+//     card.setAttribute("aria-hidden", "true");
+//     card.innerHTML =
+//       '<div class="food-img"></div><div class="food-body"><div class="sk-line short"></div><div class="sk-line"></div><div class="sk-line"></div></div>';
+//     fragment.appendChild(card);
+//   }
+//   recipeContainer.appendChild(fragment);
+// }
 
 function setStatus(message = "") {
   statusEl.textContent = message;
@@ -290,6 +318,6 @@ window.matchMedia("(min-width: 769px)").addEventListener("change", (e) => {
 
 // ===================== Start =====================
 if (currentUser) {
-  renderHeaderProfile(currentUser);
+  renderProfile(currentUser);
   loadFavorites();
 }

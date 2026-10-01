@@ -10,21 +10,20 @@
   font-family: "Poppins", sans-serif;
  
 }
-:root {
- 
-  --card-border:  #e9e9f2;
 
-  --color-border: #e9e9f2; /* fixed: was --color-place-border, which didn't exist */
-  --toggle-track-bg: #eef0f3;
+/* :root {
+  --card-border:  #e9e9f2;
+  --color-border: #e9e9f2; 
   --toggle-thumb-bg:#eef0f3;
   --option-bg: #fafafc;
   --card-bg: #ffffff;
   --bg-color: #f5eeee;
   --primary-text: #080000;
   --secondary-text: #212121;
-  
-}
-body.darkmode {
+ }  */
+
+
+/* body.darkmode {
     --toggle-track-bg: #393b3e;
     --toggle-thumb-bg:#303133;
     --bg-color: #000000;
@@ -37,10 +36,98 @@ body.darkmode {
   --option-bg: #1c1c1f;
   --option-border: #2b2b30;
   --track-bg: #232326;
+}  */
 
- 
+/* -------root elements and body styling */
+
+
+/* ================= Design ================= */
+:root {
+      --card-border:  #e9e9f2;
+  --color-border: #e9e9f2; 
+  --toggle-thumb-bg:#eef0f3;
+  --option-bg: #fafafc;
+  --card-bg: #ffffff;
+  --bg-color: #f5eeee;
+  --primary-text: #080000;
+  --secondary-text: #212121;
+
+  --font-display: "Bricolage Grotesque", "DM Sans", system-ui, sans-serif;
+
+  --bg-color: #f3f5ee;
+  --card-bg: #ffffff;
+  --card-border: #e1e7d5;
+  --tile-bg: #e9efdf;
+  --green-soft: #e2eed6;
+
+  --primary-text: #182118;
+  --secondary-text: #3a4738;
+  --light-text: #66735f;
+
+  --accent: #3d7a34;        /* buttons, active states */
+  --accent-text: #3d7a34;   /* green used as text */
+  --btn-text: #ffffff;
+  --accent-red: #d9452e;    /* favorites + logo */
+  --ring: rgba(61, 122, 52, 0.25);
+
+  --option-bg: #ffffff;
+  --option-border: #d3dbc7;
+  --toggle-track-bg: #e4e9da;
+  --toggle-thumb-bg: #ffffff;
+  --profile-bg: #182118;
+  --transition-fast: 0.2s ease;
+  --logo-bg: #3d7a34;
+
+  /* kept for older class names */
+  --color-border: var(--card-border);
+  --bg-green: var(--accent);
+  --bg-lightgreen: var(--green-soft);
 }
 
+body.darkmode {
+
+      --toggle-track-bg: #393b3e;
+    --toggle-thumb-bg:#303133;
+    --bg-color: #000000;
+    --primary-text: #ffffff;
+    --secondary-text: #f4e6e6;
+
+
+  --card-bg: #16161a;
+  --card-border: #232326;
+  --option-bg: #1c1c1f;
+  --option-border: #2b2b30;
+  --track-bg: #232326;
+
+  --bg-color: #0e130e;
+  --card-bg: #161d16;
+  --card-border: #263026;
+  --tile-bg: #1e281e;
+  --green-soft: #22301f;
+
+  --primary-text: #eef3ea;
+  --secondary-text: #c5d0c0;
+  --light-text: #8b9a86;
+
+  --accent: #8fcf7d;
+  --accent-text: #8fcf7d;
+  --btn-text: #0e130e;
+  --ring: rgba(143, 207, 125, 0.3);
+
+  --option-bg: #1c261c;
+  --option-border: #2f3c2f;
+  --toggle-track-bg: #2a342a;
+  --toggle-thumb-bg: #3a463a;
+  --profile-bg: #2b372b;
+}
+
+/* login.css was written for a centered login card; undo that here */
+body {
+  height: auto;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--primary-text);
+}
 
 
 /* ------ Theme toggle ---------- */
@@ -238,7 +325,7 @@ font-size: 16px;
 border: none;
 width: 100%;
 border-color: var(--color-border);
-background-color: var(--option-bg);
+background-color: var(--bg-color);
 /* background-color: rgb(241, 236, 236); */
 }
 input::placeholder{
@@ -266,5 +353,19 @@ input:focus{
     text-decoration: none;
 }
 
+@media screen and (max-width:550px) {
 
+    .card{
+        max-width: 350px;
+        margin: auto;
+    }
+    .left-img{
+        display: none;
+    }
+    .right_form{
+        width: 100%;
+        padding: 25px 20px;
+    }
+    
+}
 

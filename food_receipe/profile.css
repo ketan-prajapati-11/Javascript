@@ -1,0 +1,138 @@
+/* Extra styles for profile.html (cards, header and tokens come from home.css) */
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 1.75rem);
+  margin: clamp(1.5rem, 4vw, 2.5rem) 0 clamp(2rem, 5vw, 3rem);
+  padding: clamp(1.1rem, 3vw, 1.75rem);
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+}
+
+.avatar.avatar-lg {
+  height: 104px;
+  width: 104px;
+  font-size: 42px;
+}
+
+.profile-info {
+  flex: 1;
+  min-width: 0;
+}
+.profile-info h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--primary-text);
+  overflow-wrap: anywhere;
+}
+.profile-mail {
+  margin-top: 8px;
+  color: var(--secondary-text);
+  overflow-wrap: anywhere;
+}
+.profile-since {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--light-text);
+  display: none;
+}
+.profile-since[hidden] {
+  display: none;
+}
+
+/* Back to home + Log out */
+.profile-actions {
+  display: flex;
+  align-items: center;
+  flex: none;
+  gap: 10px;
+}
+.profile-actions .pill-btn,
+.profile-actions .logout-btn {
+  width: auto;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+#logout-btn:hover{
+background-color: red;
+color: white;
+}
+.profile-actions .pill-btn {
+  display: inline-block;
+}
+
+.fav-count {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 11px;
+  border-radius: 999px;
+  background-color: var(--green-soft);
+  color: var(--accent-text);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  vertical-align: middle;
+}
+.fav-count[hidden] {
+  display: none;
+}
+
+/* nothing saved yet */
+.empty {
+  margin-top: 24px;
+  padding: 48px 20px;
+  text-align: center;
+  background-color: var(--card-bg);
+  border: 1px dashed var(--option-border);
+  border-radius: 18px;
+}
+.empty[hidden] {
+  display: none;
+}
+.empty h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-text);
+}
+.empty p {
+  margin: 8px 0 18px;
+  color: var(--light-text);
+}
+.empty .pill-btn {
+  display: inline-block;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .profile-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-actions {
+    width: 100%;
+  }
+  .profile-actions .pill-btn,
+  .profile-actions .logout-btn {
+    flex: 1;
+    text-align: center;
+  }
+}
+@media (max-width: 400px) {
+  .profile-actions {
+    flex-direction: column;
+  }
+  .profile-actions .pill-btn,
+  .profile-actions .logout-btn {
+    width: 100%;
+  }
+}

@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Favorites | Meal Recipe</title>
+    <title>My Profile | Meal Recipe</title>
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="favorites.css">
+    <link rel="stylesheet" href="profile.css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
         <ul class="nav_menu" id="nav-menu">
             <li class="home_menu"><a href="home.html">Home</a></li>
             <li class="Recipe_menu"><a href="recipe.html">Recipe</a></li>
-            <li class="fevorite_menu active"><a href="favorites.html" aria-current="page">Favorites</a></li>
+            <li class="fevorite_menu"><a href="favorites.html">Favorites</a></li>
         </ul>
 
         <div class="right-menu">
@@ -36,7 +36,7 @@
                 </span>
             </button>
 
-            <a class="profile" href="profile.html" aria-label="Open my profile">
+            <a class="profile" href="profile.html" aria-label="Open my profile" aria-current="page">
                 <span class="profile-text" id="profile-name"></span>
                 <span class="avatar" id="avatar"></span>
             </a>
@@ -49,25 +49,35 @@
     </header>
 
     <main>
-        <section class="page-head">
-            <h1>My favorites <span class="fav-count" id="fav-count" hidden></span></h1>
-            <p>Your Saved Recipe is shown below</p>
+        <section class="profile-card" aria-label="My profile">
+            <div class="avatar avatar-lg" id="page-avatar"></div>
+            <div class="profile-info">
+                <h1 id="page-name"></h1>
+                <p class="profile-mail" id="page-email"></p>
+                <p class="profile-since" id="page-since" hidden></p>
+            </div>
+            <div class="profile-actions">
+                <!-- <a class="pill-btn spair" href="home.html">&larr; Back to home</a> -->
+                <button type="button" class="logout-btn" id="logout-btn">Log out</button>
+            </div>
         </section>
 
-        <section class="recipes">
+        <section class="recipes" id="favorites">
+            <div class="section-head">
+                <h2 class="section-title">Favorite recipes <span class="fav-count" id="fav-count" hidden></span></h2>
+            </div>
             <p class="status" id="status" role="status" hidden></p>
             <div class="racipe-container" id="recipe-container"></div>
 
             <div class="empty" id="empty" hidden>
                 <h3>No favorites yet</h3>
-                <p>Click on the the heart button to save Recipe here.</p>
+                <p>Tap the heart on any recipe and it will be saved here.</p>
                 <a class="pill-btn" href="home.html">Browse recipes</a>
             </div>
         </section>
     </main>
 
-    
-    <script src="favorite.js"></script>
+    <script src="profile.js"></script>
 </body>
 
 </html>
