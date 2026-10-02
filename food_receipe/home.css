@@ -267,16 +267,41 @@ main {
   /* position: relative; */
 }
 
+/* =================== Hero bg image========= */
+.hero_bg{
+   /* height: 100%;
+    */
+  height: calc(100vh - 50px);
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /* background: url(images/hero_image.png) no-repeat center center ; */
+  background-repeat: no-repeat;background-position-x: center;
+  
+}
+.hero_bg img{
+height: 100%;
+width: 100%;
+object-fit: cover;
+}
+
 /* ================= Hero + search ================= */
 
 .hero {
   padding: clamp(2rem, 6vw, 4rem) 0 clamp(1.25rem, 3vw, 2rem);
   max-width: 46rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: auto;
-  height: 100vh;
-  width: 100vw;
+  height: calc(100vh - 50px);
+  /* width: 100vw; */
   position: relative;
-  background: url(images/hero_image.png)  ;
+  /* background: url(images/hero_image.png)  ; */
   
   position: relative;
   
@@ -289,30 +314,36 @@ main {
   line-height: 1.05;
   letter-spacing: -0.03em;
   font-weight: 700;
-  color: var(--primary-text);
+  /* color: var(--primary-text); */
+  color:  #182118;
 }
 .hero p {
   margin-top: 14px;
   /* max-width: 34rem; */
   text-align: center;
   line-height: 1.55;
-  color: var(--light-text);
+  /* color: var(--light-text); */
+  color: #66735f ;
 }
 .hero .search {
   display: flex;
+  width: 85%;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   gap: 8px;
   margin-top: 26px;
   padding: 6px;
-  background-color: var(--card-bg);
-  border: 1px solid var(--option-border);
+  background-color:  #ffffff;
+  /* background-color: var(--card-bg); */
+  /* border: 1px solid var(--option-border); */
+  border: 1px solid #ffffff;
   border-radius: 999px;
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 .hero .search:focus-within {
-  border-color: var(--accent);
+  border-color: #3d7a34;;
+  /* border-color: var(--accent); */
   box-shadow: 0 0 0 4px var(--ring);
 }
 .hero .search input {
@@ -325,13 +356,15 @@ main {
   outline: none;
   background: transparent;
   font-size: 16px;
-  color: var(--primary-text);
+  color:  #182118;;
+  /* color: var(--primary-text); */
 }
 .hero .search input:focus {
   background: transparent;
 }
 .hero .search input::placeholder {
-  color: var(--light-text);
+  color:  #66735f;
+  /* color: var(--light-text); */
 }
 .search-clear {
   display: grid;
@@ -342,7 +375,8 @@ main {
   border: none;
   border-radius: 50%;
   background-color: var(--tile-bg);
-  color: var(--secondary-text);
+  color:  #3a4738;
+  /* color: var(--secondary-text); */
   font-size: 20px;
   line-height: 1;
   padding-bottom: 2px;
@@ -352,14 +386,16 @@ main {
   display: none;
 }
 .search-clear:hover {
-  background-color: var(--card-border);
+  background-color:  #e1e7d5;
 }
 .search-btn {
   padding: 11px 26px;
   border: none;
   border-radius: 999px;
-  background-color: var(--accent);
-  color: var(--btn-text);
+  /* background-color: var(--accent); */
+  background-color: #3d7a34;
+  /* color: var(--btn-text); */
+  color:  #ffffff;;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
@@ -707,9 +743,24 @@ main {
   0% { background-position: 100% 0; }
   100% { background-position: 0 0; }
 }
+/* ================= 1024px========= =========*/
+@media screen and (max-width: 1024px) {
+  .hero_bg{
+    height: calc(80vh - 40px);
+  }
+  .hero{
+      height: calc(80vh - 40px);
+  }
+}
+/* ================= mobile ================= */
+@media screen and (max-width: 768px) {
 
-/* ================= Tablet / mobile ================= */
-@media (max-width: 768px) {
+   .hero_bg{
+    height: calc(70vh - 40px);
+  }
+  .hero{
+      height: calc(70vh - 40px);
+  }
   .menu-toggle {
     display: flex;
   }
@@ -751,7 +802,15 @@ main {
   }
 }
 
-@media (max-width: 700px) {
+@media screen and (max-width: 700px) {
+
+   .hero_bg{
+    height: calc(60vh - 40px);
+  }
+  .hero{
+      height: calc(60vh - 40px);
+  }
+
   .hero .search {
     gap: 4px;
   }
@@ -791,8 +850,18 @@ main {
     padding: 7px;
   }
 }
+@media screen and (max-width: 520px) {
 
-@media (max-width: 360px) {
+  
+   .hero_bg{
+    height: calc(55vh - 40px);
+  }
+  .hero{
+      height: calc(55vh - 40px);
+  }
+}
+
+@media screen and  (max-width: 360px) {
   .racipe-container {
     grid-template-columns: 1fr;
   }

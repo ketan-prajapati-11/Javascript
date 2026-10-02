@@ -213,7 +213,9 @@ main.recipe-page {
   font-size: 14px;
   font-weight: 700;
 }
-
+.hidebtn{
+  display: none;
+}
 /* ---------- loading + error ---------- */
 .sk-stack {
   display: flex;
